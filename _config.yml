@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            GDG Pato Branco
 tagline:          ''
-description:      'Google Developer Group - Pato Branco é um grupo de entusiastas da tecnologia. Criamos e compartilhamos conhecimento'
+description:      'Compartilhamos ideias, criamos conhecimento'
 logo:             /assets/GDG_square_lg.png
 url:              http://hyde.getpoole.com
 baseurl:          /

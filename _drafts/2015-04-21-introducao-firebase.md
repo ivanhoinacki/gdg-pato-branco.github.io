@@ -70,7 +70,7 @@ Crie uma conta no [Firebase](https://www.firebase.com/).
 
 **2º Passo**
 
-Crie um banco de dados informando o nome do aplicativo (qualquer nome). Por padrão o nome da aplicação será o mesmo nome dado para o banco. Para dar outro nome ao banco de dados, altere o campo APP URL.
+Crie um banco de dados informando o nome do aplicativo. Por padrão, o nome do banco e da aplicação é o mesmo. Para dar outro nome ao banco de dados, altere o campo APP URL.
 
 **3º Passo**
 
@@ -78,7 +78,7 @@ Crie um documento html e adicione a biblioteca do firebase:
 ``` HTML
 <html>
 	<head>
-	    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+	    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
 	</head>
 	<body>
 	</body>
@@ -87,16 +87,16 @@ Crie um documento html e adicione a biblioteca do firebase:
 
 **4º Passo**
 
-Crie uma referência para a raiz do seu banco Firebase. Substitua [meu banco] pelo nome do banco que você criou no segundo passo.
+Crie uma referência para a raiz do seu banco Firebase. Substitua **[meu banco]** pelo nome do banco que você criou no segundo passo:
 ``` HTML
 <script>	
-	var firebaseRef = new Firebase('https://[meu banco].firebaseio-demo.com/');
+	var firebaseRef = new Firebase("https://[meu banco].firebaseio.com/");
 </script>
 ```
     
 **5º Passo**
 
-O método set() é responsável criar ou substituir os dados do banco. Então criaremos um método para criar ou recriar o nosso objeto JSON utilizando o método set()
+O método **set()** é responsável criar ou substituir os dados do banco. Então criaremos um método para criar ou recriar o nosso objeto JSON utilizando o método **set()**:
 
 ``` HTML
 	<script>
@@ -122,21 +122,21 @@ O método set() é responsável criar ou substituir os dados do banco. Então cr
 
 **6º Passo**
 
-Iremos atualizar o campo "magia" do lutador Blanka. Para isso, utilizaremos o método update(). Mas primeiramente iremos apontar a referência para o campo que será atualizado, utlizando o método child().
+Iremos atualizar o campo **"magia"** do lutador Blanka. Para isso, utilizaremos o método **update()**. Mas primeiramente iremos apontar a referência para o objeto que será atualizado, utlizando o método **child()**:
 ``` HTML
-    <script>
-        function atualizarMagiaBlanka() {
-          var refBlanka = firebaseRef.child("lutadores/blanka");
-          hopperRef.update({
-            "magia": "Rolling Attack"
-          });
-        }
-    </script>
+<script>
+	function atualizarMagiaBlanka() {
+		var refBlanka = firebaseRef.child("lutadores/blanka");
+		refBlanka.update({
+			"magia": "Rolling Attack"
+		});
+	}
+</script>
 ```
 **7º Passo**
 
-Por último, é necessário adicionar um evento para "escutar" as modificações que serão feitas no banco de dados. O evento "value" é aquele que desempenha este papel.
-O método val() retorna o objeto JSON atualizado.
+Por último, é necessário adicionar um evento para "escutar" as modificações que serão feitas no banco de dados. O evento **"value"** é aquele que desempenha este papel.
+O método **val()** retorna o objeto JSON atualizado.
 
 ``` HTML
 <script>
@@ -155,11 +155,15 @@ E finalmente o código completo:
 ``` HTML
 <html>
 	<head>
-	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+		<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
 	</head>
 	<body>
+		<input type="button" onclick="criarJson()" value="Criar JSON" />
+		<input type="button" onclick="atualizarMagiaBlanka()" value="Atualizar Magia Blanka" />
+		<div id="jsonOut"></div>
+	
 		<script>
-			var firebaseRef = new Firebase('https://[meu banco].firebaseio.com/');
+			var firebaseRef = new Firebase("https://[meu banco].firebaseio.com/");
 			
 			firebaseRef.on("value", function(snapshot) {
 				mostrarJson(snapshot.val());
@@ -194,12 +198,100 @@ E finalmente o código completo:
 				});
 			}
 		</script>
-		
-		<input type="button" onclick="criarJson()" value="Criar JSON" />
-		
-		<input type="button" onclick="atualizarMagiaBlanka()" value="Atualizar Magia Blanka" />
-		
-		<div id="jsonOut"></div>
 	</body>
 </html>
  ```
+
+### Console
+ 
+ O Firebase possui um console que possibilita ao usuário visualizar e manipular os dados do banco. Você pode acessar o console através da página inicial, onde é exibida uma lista com todas as aplicações, ou digitar diretamente o endereço da aplicação https://nomedobanco.firebaseio.com.
+ 
+### Listas / Arrays
+
+Aqueles que estão mais familiarizados com a sintaxe do JSON devem ter percebido o seguinte:
+
+A lista de lutadores foi criada assim:
+``` JSON
+"lutadores": {
+	"blanka": {
+		"magia":"Electric Thunder"
+	},
+	"ryu": {
+		"magia":"Hadouken"
+	},
+	"sagat": {
+		"magia":"Tiger Uppercut"
+	}
+}
+```
+
+Mas normalmente ela seria criada como um array:
+``` JSON
+"lutadores": {
+	[
+		{
+			"nome":"Blanka",
+			"magia":"Electric Thunder"
+		},
+		{
+			"nome":"Ryu",
+			"magia":"Hadouken"
+		},
+		{
+			"nome":"Sagat",
+			"magia":"Tiger Uppercut"
+		}
+	]
+}
+```
+
+O motivo para isso é que cada elemento do objeto JSON no Firebase é tratado como uma child. A child nada mais é do que uma propriedade do objeto JSON e cada propriedade deve ter um nome de identificação.
+
+Mas obviamente é impossível criar identificações manualmente para cada elemento do objeto (como eu fiz nos exemplos).
+
+**Método push()**
+
+O método **push()** é responsável por incluir uma **child** no objeto JSON e atribuir um identificador aleatório para esse item.
+
+Vamos ver como ficaria o exemplo modificado para utilizar o push:
+
+``` HTML
+<html>
+	<head>
+		<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<input type="text" id="nome" placeholder="Nome">
+		<input type="text" id="magia" placeholder="Magia">
+		<input type="button" id="btn" value="Criar Lutador">
+		<div id="jsonOut"></div>
+		
+		<script>
+			var firebaseRef = new Firebase("https://[meu banco].firebaseio.com/");
+			
+			firebaseRef.on("value", function(snapshot) {
+				mostrarJson(snapshot.val());
+			});
+			
+			function mostrarJson(json) {
+				document.getElementById("jsonOut").innerHTML = JSON.stringify(json);
+			}
+			
+			function adicionarLutador(paramNome, paramMagia) {
+				var childRef = firebaseRef.child("lutadores");
+				childRef.push({nome:paramNome, magia:paramMagia});
+			}
+			
+			$( "#btn" ).click(function() {
+				var nome = $('#nome').val();
+				var magia = $('#magia').val();
+				adicionarLutador(nome, magia);
+			});
+		</script>
+	</body>
+</html>
+```
+
+Observe que se o objeto **"lutadores"** não existir, ele será criado. Ná próxima vez que for feito o **push**, o objeto simplesmente será anexado ao objeto **"lutadores"** já existente.
+

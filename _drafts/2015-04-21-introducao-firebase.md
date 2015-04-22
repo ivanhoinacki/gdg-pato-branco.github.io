@@ -4,20 +4,20 @@ title: Introdução ao Firebase
 ---
 
 ### A Empresa
-Firebase foi fundada em 2011 por Andrew Lee e James Tamplin. A empresa está localizada na cidade de São Francisco na Califórnia. Em outubro de 2014, a empresa foi comprada pelo Google.
+A empresa Firebase foi fundada em 2011 por Andrew Lee e James Tamplin. Ela está localizada na cidade de São Francisco na Califórnia. Em outubro de 2014, a empresa foi comprada pelo Google.
 
 ### O que é?
-O Firebase é um BaaS (backend as a service) que oferece diversos seviços para facilitar o desenvolvimento de aplicações  no lado do servidor. Com integração a várias plataformas como Angular, Java Script, Node.js, Android e IOS, o Firebase ajuda desenvolvedores a focar no desenvolvimento frontend mobile e web.
+O Firebase é um BaaS (backend as a service) que oferece diversos serviços para facilitar o desenvolvimento de aplicações  no lado do servidor. Com integração a várias plataformas como Angular, Java Script, Node.js, Android e IOS, o Firebase ajuda desenvolvedores a focar no desenvolvimento frontend mobile e web.
 
 O coração do Firebase é um banco de dados NoSQL real time que armazena os dados na nuvem. A manipulação dos dados do banco é feita através de uma API REST, mas todas as chamadas podem ser feitas através das bibliotecas específicas de cada linguagem, o que facilita bastante a utilização. 
 
 ### Porque usar?
 - Reduz a complexidade ou até elimina a necessidade de desenvolver uma aplicação server side específica.
 - Tempo de resposta baixíssimo, o que torna o Firebase ideal para aplicações real time como chats e jogos multiplayers.
-- Crescimento progressivo da aplicação. A partir do plano Candle (o plano free não escolona), a sua aplicação poderá receber a quantidade de tráfego de dados e de usários que for necessária. Independente dos limites do plano, a sua aplicação irá escalonar para atender a demanda . Será cobrado um valor extra é claro, mas pelo menos a sua aplicação poderá crescer forever ;).
+- Crescimento progressivo da aplicação. A partir do plano Candle (o plano free não escolona), a sua aplicação poderá receber a quantidade de tráfego de dados e de usuários que for necessária. Independente dos limites do plano, a sua aplicação irá escalonar para atender a demanda . Será cobrado um valor extra é claro, mas pelo menos a sua aplicação poderá crescer forever ;).
 
 ### Como Funciona?
-A raiz do Firebase nada mais é que um objeto JSON. A partir desse objeto, é possivel criar campos numéricos, alpha-numéricos, ou objetos que podem conter outros objetos.
+A raiz do Firebase nada mais é que um objeto JSON. A partir desse objeto, é possível criar campos numéricos, alfanuméricos, ou objetos que podem conter outros objetos.
 
 Agora imagine o seguinte objeto JSON inserido no banco:
 
@@ -41,7 +41,7 @@ O Firebase transforma automaticamente cada propriedade do objeto JSON em um "res
 Na prática, você poderá acessar os dados através do seu navegador. Por exemplo, acesse o endereço https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.
 O que é na prática um método HTTP GET invocado pelo navegador.
 
-Para aqueles que utilizam linux, é possivel acessar os dados através do curl:
+Para aqueles que utilizam linux, é possível acessar os dados através do curl:
 curl https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.json
 
 ### Na prática
@@ -81,7 +81,7 @@ Crie uma referência para a raiz do seu banco Firebase. Substitua [meu banco] pe
     
 **5º Passo**
 
-O método set() é reponsável criar ou substituir o dados do banco. Então criaremos um método para criar ou recriar o nosso objeto JSON utilizando o método set()
+O método set() é responsável criar ou substituir os dados do banco. Então criaremos um método para criar ou recriar o nosso objeto JSON utilizando o método set()
 
 ``` HTML
 	<script>
@@ -120,7 +120,7 @@ Iremos atualizar o campo "magia" do lutador Blanka. Para isso, utilizaremos o m�
 ```
 **7º Passo**
 
-Por último, é necessário adicionar um evento para "escutar" as modificação que serão feitas no banco de dados. O evento "value" é aquele que desempenha este papel.
+Por último, é necessário adicionar um evento para "escutar" as modificações que serão feitas no banco de dados. O evento "value" é aquele que desempenha este papel.
 O método val() retorna o objeto JSON atualizado.
 
 ``` HTML

@@ -295,3 +295,34 @@ Vamos ver como ficaria o exemplo modificado para utilizar o push:
 
 Observe que se o objeto **"lutadores"** não existir, ele será criado. Ná próxima vez que for feito o **push**, o objeto simplesmente será anexado ao objeto **"lutadores"** já existente.
 
+### O que faltou?
+
+Não cobrimos neste tutorial a parte de [segurança](https://www.firebase.com/docs/security/) e [hosting](https://www.firebase.com/docs/hosting/) do Firebase.
+
+### Na sequência
+
+Alguns links interessantes:
+
+**Documentação do Firebase**
+
+https://www.firebase.com/docs/
+
+**Open Data Sets**
+
+O Firebase disponibiliza bancos, que podem ser utilizados pela sua aplicação, que são atualizados em tempo real com informações sobre trânsito, tempo de espera em aéroportos, previsão do tempo, terremotos e estacionamento.
+
+https://www.firebase.com/docs/open-data/
+
+**Exemplo de aplicações com o código fonte**
+
+https://www.firebase.com/docs/web/examples.html
+
+### Referências
+
+https://www.firebase.com/docs
+
+http://en.wikipedia.org/wiki/Firebase
+
+http://en.wikipedia.org/wiki/Mobile_Backend_as_a_service
+
+

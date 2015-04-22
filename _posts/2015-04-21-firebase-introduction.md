@@ -38,23 +38,24 @@ O Firebase transforma automaticamente cada propriedade do objeto JSON em um "res
 
 **Objeto JSON raiz**
 
-https://gdg-street-fighter.firebaseio.com/.json
+[https://gdg-street-fighter.firebaseio.com/.json](https://gdg-street-fighter.firebaseio.com/.json)
 
 **Objeto lutadores**
 
-https://gdg-street-fighter.firebaseio.com/lutadores.json
+[https://gdg-street-fighter.firebaseio.com/lutadores.json](https://gdg-street-fighter.firebaseio.com/lutadores.json)
 
 **Objeto Blanka**
 
-https://gdg-street-fighter.firebaseio.com/lutadores/blanka.json
+[https://gdg-street-fighter.firebaseio.com/lutadores/blanka.json](https://gdg-street-fighter.firebaseio.com/lutadores/blanka.json)
 
 **Valor da propriedade magia do objeto Blanka**
 
-https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.json
+[https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.json](https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.json)
 
 ...
 
 Para aqueles que utilizam o Linux, também é possível acessar os dados através do curl:
+
 ``` 
 curl https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.json
 ```
@@ -75,6 +76,7 @@ Crie um banco de dados informando o nome do aplicativo. Por padrão, o nome do b
 **3º Passo**
 
 Crie um documento html e adicione a biblioteca do firebase:
+
 ``` HTML
 <html>
 	<head>
@@ -88,6 +90,7 @@ Crie um documento html e adicione a biblioteca do firebase:
 **4º Passo**
 
 Crie uma referência para a raiz do seu banco Firebase. Substitua **[meu banco]** pelo nome do banco que você criou no segundo passo:
+
 ``` HTML
 <script>	
 	var firebaseRef = new Firebase("https://[meu banco].firebaseio.com/");
@@ -123,6 +126,7 @@ O método **set()** é responsável criar ou substituir os dados do banco. Entã
 **6º Passo**
 
 Iremos atualizar o campo **"magia"** do lutador Blanka. Para isso, utilizaremos o método **update()**. Mas primeiramente iremos apontar a referência para o objeto que será atualizado, utlizando o método **child()**:
+
 ``` HTML
 <script>
 	function atualizarMagiaBlanka() {
@@ -133,6 +137,7 @@ Iremos atualizar o campo **"magia"** do lutador Blanka. Para isso, utilizaremos 
 	}
 </script>
 ```
+
 **7º Passo**
 
 Por último, é necessário adicionar um evento para "escutar" as modificações que serão feitas no banco de dados. O evento **"value"** é aquele que desempenha este papel.
@@ -211,6 +216,7 @@ E finalmente o código completo:
 Aqueles que estão mais familiarizados com a sintaxe do JSON devem ter percebido o seguinte:
 
 A lista de lutadores foi criada assim:
+
 ``` JSON
 "lutadores": {
 	"blanka": {
@@ -226,6 +232,7 @@ A lista de lutadores foi criada assim:
 ```
 
 Mas normalmente ela seria criada como um array:
+
 ``` JSON
 "lutadores": {
 	[
@@ -305,22 +312,22 @@ Alguns links interessantes:
 
 **Documentação do Firebase**
 
-https://www.firebase.com/docs/
+[https://www.firebase.com/docs](https://www.firebase.com/docs)
 
 **Open Data Sets**
 
 O Firebase disponibiliza bancos, que podem ser utilizados pela sua aplicação, que são atualizados em tempo real com informações sobre trânsito, tempo de espera em aéroportos, previsão do tempo, terremotos e estacionamento.
 
-https://www.firebase.com/docs/open-data/
+[https://www.firebase.com/docs/open-data](https://www.firebase.com/docs/open-data)
 
 **Exemplo de aplicações com o código fonte**
 
-https://www.firebase.com/docs/web/examples.html
+[https://www.firebase.com/docs/web/examples.html](https://www.firebase.com/docs/web/examples.html)
 
 ### Referências
 
-https://www.firebase.com/docs
+[https://www.firebase.com/docs](https://www.firebase.com/docs)
 
-http://en.wikipedia.org/wiki/Firebase
+[http://en.wikipedia.org/wiki/Firebase](http://en.wikipedia.org/wiki/Firebase)
 
-http://en.wikipedia.org/wiki/Mobile_Backend_as_a_service
+[http://en.wikipedia.org/wiki/Mobile_Backend_as_a_service](http://en.wikipedia.org/wiki/Mobile_Backend_as_a_service)

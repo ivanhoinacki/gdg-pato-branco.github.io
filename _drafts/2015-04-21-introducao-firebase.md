@@ -7,7 +7,7 @@ title: Introdução ao Firebase
 A empresa Firebase foi fundada em 2011 por Andrew Lee e James Tamplin. Ela está localizada na cidade de São Francisco na Califórnia. Em outubro de 2014, a empresa foi comprada pelo Google.
 
 ### O que é?
-O Firebase é um BaaS (backend as a service) que oferece diversos serviços para facilitar o desenvolvimento de aplicações  no lado do servidor. Com integração a várias plataformas como Angular, Java Script, Node.js, Android e IOS, o Firebase ajuda desenvolvedores a focar no desenvolvimento frontend mobile e web.
+O Firebase é um [BaaS](http://en.wikipedia.org/wiki/Mobile_Backend_as_a_service) (backend as a service) que oferece diversos serviços para facilitar o desenvolvimento de aplicações  no lado do servidor. Com integração a várias plataformas como Angular, Java Script, Node.js, Android e IOS, o Firebase ajuda desenvolvedores a focar no desenvolvimento frontend mobile e web.
 
 O coração do Firebase é um banco de dados NoSQL real time que armazena os dados na nuvem. A manipulação dos dados do banco é feita através de uma API REST, mas todas as chamadas podem ser feitas através das bibliotecas específicas de cada linguagem, o que facilita bastante a utilização. 
 
@@ -34,23 +34,38 @@ Agora imagine o seguinte objeto JSON inserido no banco:
 	}
 }
 ```
-	
-Para mostrar o acesso dessas propriedades, criamos o objeto JSON acima no endereço https://gdg-street-fighter.firebaseio.com . Abrindo esse endereço no navegador, será exibido o console do firebase que mostra o objeto json de uma forma gráfica (você deverá estar logado ou criar uma conta no firebase).
+O Firebase transforma automaticamente cada propriedade do objeto JSON em um "resource" que poderá ser acessível através da API REST. Na prática, para cada propriedade será criada uma nova URL. O JSON acima foi criado no endereço https://gdg-street-fighter.firebaseio.com. Então, acesse as seguintes URLs no seu navegador e veja os resultados:
 
-O Firebase transforma automaticamente cada propriedade do objeto JSON em um "resource" que poderá ser acessível através da API REST.
-Na prática, você poderá acessar os dados através do seu navegador. Por exemplo, acesse o endereço https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.
-O que é na prática um método HTTP GET invocado pelo navegador.
+**Objeto JSON raiz**
 
-Para aqueles que utilizam linux, é possível acessar os dados através do curl:
+https://gdg-street-fighter.firebaseio.com/.json
+
+**Objeto lutadores**
+
+https://gdg-street-fighter.firebaseio.com/lutadores.json
+
+**Objeto Blanka**
+
+https://gdg-street-fighter.firebaseio.com/lutadores/blanka.json
+
+**Valor da propriedade magia do objeto Blanka**
+
+https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.json
+
+...
+
+Para aqueles que utilizam o Linux, também é possível acessar os dados através do curl:
+``` 
 curl https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.json
+```
 
 ### Na prática
 
-Para mostrar um exemplo, utilizaremos a biblioteca para JavaScript.
+Para esse exemplo, utilizaremos a biblioteca para JavaScript.
 
 **1º Passo**
 
-Crie uma conta no Firebase.
+Crie uma conta no [Firebase](https://www.firebase.com/).
 
 
 **2º Passo**
@@ -188,5 +203,3 @@ E finalmente o código completo:
 	</body>
 </html>
  ```
-
-

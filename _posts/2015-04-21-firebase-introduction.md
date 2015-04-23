@@ -21,7 +21,7 @@ A raiz do Firebase nada mais é que um objeto JSON. A partir desse objeto, é po
 
 Agora imagine o seguinte objeto JSON inserido no banco:
 
-``` JSON
+``` HTML
 "lutadores": {
 	"blanka": {
 		"magia":"Electric Thunder"
@@ -217,7 +217,7 @@ Aqueles que estão mais familiarizados com a sintaxe do JSON devem ter percebido
 
 A lista de lutadores foi criada assim:
 
-``` JSON
+``` HTML
 "lutadores": {
 	"blanka": {
 		"magia":"Electric Thunder"
@@ -233,7 +233,7 @@ A lista de lutadores foi criada assim:
 
 Mas normalmente ela seria criada como um array:
 
-``` JSON
+``` HTML
 "lutadores": {
 	[
 		{

@@ -22,16 +22,16 @@ author:
 avatar  :
   - id  :         emalherbi
     name:         'Eduardo Malherbi'
-    url :         http://www.gravatar.com/avatar/b4b2e05c730f60dd7ad3acb964bed758.png
+    url :         http://www.gravatar.com/avatar/b4b2e05c730f60dd7ad3acb964bed758.png?s=80
   - id  :         leandro
     name:         'Leandro Parazito'
-    url :         https://avatars0.githubusercontent.com/u/11623?v=3&s=200
+    url :         https://pt.gravatar.com/userimage/5637778/870c4611b17ed48c958cc13f1bc8b523.jpg?size=80
   - id  :         vitor
-    name:         'Vitor Vigano'
-    url :         https://avatars2.githubusercontent.com/u/873347?v=3&s=200
+    name:         'Vitor Viganó'
+    url :         http://www.gravatar.com/avatar/76bee5ccbd52cb756b22638f73383089.png?s=80
   - id  :         raoni
     name:         'Raoni Renosto'
-    url :         https://avatars1.githubusercontent.com/u/2836033?v=3&s=200
+    url :         https://s.gravatar.com/avatar/ddb2be29af32b024b023316db3b6ede5?s=80
 
 paginate:         5
 

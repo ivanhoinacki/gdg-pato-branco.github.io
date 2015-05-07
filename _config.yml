@@ -9,7 +9,7 @@ relative_permalinks: true
 # Setup
 title:            GDG Pato Branco
 tagline:          ''
-description:      'Compartilhamos ideias, criamos conhecimento'
+description:      'Compartilhamos ideias, criamos conhecimento.'
 logo:             /assets/GDG_square_lg.png
 url:              http://hyde.getpoole.com
 baseurl:          /
@@ -17,6 +17,21 @@ baseurl:          /
 author:
   name:           'GDG Pato Branco'
   url:            https://twitter.com/mdo
+
+# avatar
+avatar  :
+  - id  :         emalherbi
+    name:         'Eduardo Malherbi'
+    url :         http://www.gravatar.com/avatar/b4b2e05c730f60dd7ad3acb964bed758.png
+  - id  :         leandro
+    name:         'Leandro Parazito'
+    url :         https://avatars0.githubusercontent.com/u/11623?v=3&s=200
+  - id  :         vitor
+    name:         'Vitor Vigano'
+    url :         https://avatars2.githubusercontent.com/u/873347?v=3&s=200
+  - id  :         raoni
+    name:         'Raoni Renosto'
+    url :         https://avatars1.githubusercontent.com/u/2836033?v=3&s=200
 
 paginate:         5
 

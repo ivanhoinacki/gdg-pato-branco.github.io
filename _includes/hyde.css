@@ -32,6 +32,7 @@
 
 html {
   font-family: "Karla", Roboto, Helvetica, Arial, sans-serif;
+  /*font-family: 'Maven Pro', sans-serif;*/
 }
 @media (min-width: 48em) {
   html {
@@ -104,12 +105,16 @@ html {
   display: block;
   line-height: 1.75;
 }
+a.sidebar-nav-item {
+  color: #000;
+}
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
   text-decoration: underline;
 }
 .sidebar-nav-item.active {
   font-weight: bold;
+  color: #FFF;
 }
 
 /* Sticky sidebar

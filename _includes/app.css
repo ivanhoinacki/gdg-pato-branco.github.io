@@ -1,0 +1,31 @@
+.post-meta {
+    color: #9eabb3;
+    display: flex;
+    font-family: "Open Sans",sans-serif;
+    line-height: 1.2rem;
+    margin: 1.75rem 0 0;
+}
+.post-meta a {
+    color: #9eabb3;
+    text-decoration: none;
+    font-size: 12px;
+}
+.post-meta a:hover {
+    text-decoration: underline;
+}
+.post-date2 {
+    border-left: 1px solid #d5dbde;
+    display: flex;
+    font-size: 12px;
+    margin-left: 8px;
+    margin-top: 0;
+    padding-left: 12px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.author-thumb {
+    border-radius: 100%;
+    height: 24px;
+    margin-right: 9px;
+    width: 24px;
+}

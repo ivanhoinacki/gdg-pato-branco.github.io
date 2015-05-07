@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Introdução ao Firebase
+avatar: raoni
 ---
 
 ### A Empresa
@@ -9,7 +10,7 @@ A empresa Firebase foi fundada em 2011 por Andrew Lee e James Tamplin. Ela está
 ### O que é?
 O Firebase é um [BaaS](http://en.wikipedia.org/wiki/Mobile_Backend_as_a_service) (backend as a service) que oferece diversos serviços para facilitar o desenvolvimento de aplicações  no lado do servidor. Com integração a várias plataformas como Angular, Java Script, Node.js, Android e IOS, o Firebase ajuda desenvolvedores a focar no desenvolvimento frontend mobile e web.
 
-O coração do Firebase é um banco de dados NoSQL real time que armazena os dados na nuvem. A manipulação dos dados do banco é feita através de uma API REST, mas todas as chamadas podem ser feitas através das bibliotecas específicas de cada linguagem, o que facilita bastante a utilização. 
+O coração do Firebase é um banco de dados NoSQL real time que armazena os dados na nuvem. A manipulação dos dados do banco é feita através de uma API REST, mas todas as chamadas podem ser feitas através das bibliotecas específicas de cada linguagem, o que facilita bastante a utilização.
 
 ### Porque usar?
 - Reduz a complexidade ou até elimina a necessidade de desenvolver uma aplicação server side específica.
@@ -56,7 +57,7 @@ O Firebase transforma automaticamente cada propriedade do objeto JSON em um "res
 
 Para aqueles que utilizam o Linux, também é possível acessar os dados através do curl:
 
-``` 
+```
 curl https://gdg-street-fighter.firebaseio.com/lutadores/blanka/magia.json
 ```
 
@@ -92,11 +93,11 @@ Crie um documento html e adicione a biblioteca do firebase:
 Crie uma referência para a raiz do seu banco Firebase. Substitua **[meu banco]** pelo nome do banco que você criou no segundo passo:
 
 ``` HTML
-<script>	
+<script>
 	var firebaseRef = new Firebase("https://[meu banco].firebaseio.com/");
 </script>
 ```
-    
+
 **5º Passo**
 
 O método **set()** é responsável criar ou substituir os dados do banco. Então criaremos um método para criar ou recriar o nosso objeto JSON utilizando o método **set()**:
@@ -148,13 +149,13 @@ O método **val()** retorna o objeto JSON atualizado.
 	firebaseRef.on("value", function(snapshot) {
 	    mostrarJson(snapshot.val());
 	});
-	
+
 	function mostrarJson(json) {
 	    document.getElementById("jsonOut").innerHTML = JSON.stringify(json);
 	}
 </script>
 ```
-        
+
 E finalmente o código completo:
 
 ``` HTML
@@ -166,18 +167,18 @@ E finalmente o código completo:
 		<input type="button" onclick="criarJson()" value="Criar JSON" />
 		<input type="button" onclick="atualizarMagiaBlanka()" value="Atualizar Magia Blanka" />
 		<div id="jsonOut"></div>
-	
+
 		<script>
 			var firebaseRef = new Firebase("https://[meu banco].firebaseio.com/");
-			
+
 			firebaseRef.on("value", function(snapshot) {
 				mostrarJson(snapshot.val());
 			});
-			
+
 			function mostrarJson(json) {
 				document.getElementById("jsonOut").innerHTML = JSON.stringify(json);
 			}
-			
+
 			function criarJson() {
 				firebaseRef.set(
 					{
@@ -195,7 +196,7 @@ E finalmente o código completo:
 					}
 				);
 			}
-			
+
 			function atualizarMagiaBlanka() {
 				var refBlanka = firebaseRef.child("lutadores/blanka");
 				refBlanka.update({
@@ -208,9 +209,9 @@ E finalmente o código completo:
  ```
 
 ### Console
- 
+
  O Firebase possui um console que possibilita ao usuário visualizar e manipular os dados do banco. Você pode acessar o console através da página inicial, onde é exibida uma lista com todas as aplicações, ou digitar diretamente o endereço da aplicação https://nomedobanco.firebaseio.com.
- 
+
 ### Listas / Arrays
 
 Aqueles que estão mais familiarizados com a sintaxe do JSON devem ter percebido o seguinte:
@@ -273,23 +274,23 @@ Vamos ver como ficaria o exemplo modificado para utilizar o push:
 		<input type="text" id="magia" placeholder="Magia">
 		<input type="button" id="btn" value="Criar Lutador">
 		<div id="jsonOut"></div>
-		
+
 		<script>
 			var firebaseRef = new Firebase("https://[meu banco].firebaseio.com/");
-			
+
 			firebaseRef.on("value", function(snapshot) {
 				mostrarJson(snapshot.val());
 			});
-			
+
 			function mostrarJson(json) {
 				document.getElementById("jsonOut").innerHTML = JSON.stringify(json);
 			}
-			
+
 			function adicionarLutador(paramNome, paramMagia) {
 				var childRef = firebaseRef.child("lutadores");
 				childRef.push({nome:paramNome, magia:paramMagia});
 			}
-			
+
 			$( "#btn" ).click(function() {
 				var nome = $('#nome').val();
 				var magia = $('#magia').val();

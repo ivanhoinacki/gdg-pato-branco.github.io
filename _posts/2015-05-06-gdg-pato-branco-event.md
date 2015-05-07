@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Evento - GDG Pato Branco
+avatar: emalherbi
 ---
 
 Olá pessoal, é com muita alegria que iniciamos as nossas atividades do GDG Pato Branco.

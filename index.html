@@ -17,7 +17,7 @@ title: Blog
     {% for avatar in site.avatar %}
       {% if post.avatar == avatar.id  %}
         <footer class="post-meta" >
-          <img alt="Author image" src="{{ avatar.url }}" class="author-thumb  " >
+          <img alt="Author image" src="{{ avatar.url }}" class="author-thumb" >
           <a href="#" >{{ avatar.name }}</a>
           <span class="post-date post-date2">{{ post.date | date_to_string }}</span>
         </footer>

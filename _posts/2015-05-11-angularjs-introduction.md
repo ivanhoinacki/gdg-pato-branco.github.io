@@ -273,7 +273,7 @@ Diretivas (directives.js)
 
 Lembra-se no **index.html** que tinhamos as tags html ```<mast-head></mast-head>``` e ```<mast-footer></mast-footer>```? Quando rodamos nossa aplicação um código **html** é injetado nesse elemento. Como fazemos isso?
 
-Observe como ficou o **directives.js** conforme Listagem 8.
+Observe como ficou o **directives.js** conforme Listagem 9.
 
 ```js
 angular.module("app").directive("mastHead", function() {
@@ -284,7 +284,7 @@ angular.module("app").directive("mastHead", function() {
 ...
 ```
 
-> Listagem 8 - Diretivas
+> Listagem 9 - Diretivas
 
 Segundo AngularJS, as **diretivas** são marcadores em um elemento DOM que informam ao compilador HTML da angularjs para anexar um comportamento especificado para esse elemento DOM [(ANGULARJS, 2015)](https://docs.angularjs.org/guide/directive).
 

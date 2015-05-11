@@ -12,7 +12,7 @@ title: Blog
       </a>
     </h1>
 
-    {{ post.excerpt }}
+    {{ post.content | strip_html | truncatewords: 50 }}
 
     {% for avatar in site.avatar %}
       {% if post.avatar == avatar.id  %}

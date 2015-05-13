@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% include head.html %}
+  {% include head.html %}
 <body>
-    {% include sidebar.html %}
-    <div class="content container">
-      {{content}}
+  <div class="subscribe">
+    <div class="form">
+        <input type="text" name="name" id="name" role="name" placeholder="Nome" aria-label="Nome" class="gc sp g-lW" tabindex="0">
+        <input type="text" name="email" id="email" role="email" placeholder="Email" aria-label="Email" class="gc sp g-lW" tabindex="1">
+        <input type="submit" name="subscribe" id="subscribe" value="Enviar" role="subscribe" class="gc sp g-lW" tabindex="2">
     </div>
+  </div>
+
+  {% include sidebar.html %}
+  <div class="content container">
+    {{content}}
+  </div>
+
+ <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+ <script>
+   var firebaseRef = new Firebase("https://gdgnewsletter.firebaseio.com/");
+   var usersRef = firebaseRef.child("gdgnewsletter");
+
+   function criarJson() {
+     var name = document.getElementById("name").value;
+     var email = document.getElementById("email").value;
+
+     if (name && email) {
+       usersRef.push({ name: name, email: email });
+     }
+   }
+
+   function subscribe(event) {
+     criarJson();
+     event.preventDefault();
+   }
+
+   var submit = document.getElementById("subscribe");
+   submit.addEventListener('click', subscribe);
+ </script>
 </body>
 </html>

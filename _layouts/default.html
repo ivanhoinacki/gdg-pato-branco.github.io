@@ -2,35 +2,35 @@
 <html lang="en">
   {% include head.html %}
 <body>
-  <div class="subscribe">
-    <div class="form">
-        <input type="text" name="name" id="name" role="name" placeholder="Nome" aria-label="Nome" class="gc sp g-lW" tabindex="0">
-        <input type="text" name="email" id="email" role="email" placeholder="Email" aria-label="Email" class="gc sp g-lW" tabindex="1">
-        <input type="submit" name="subscribe" id="subscribe" value="Enviar" role="subscribe" class="gc sp g-lW" tabindex="2">
-    </div>
-  </div>
-
   {% include sidebar.html %}
   <div class="content container">
     {{content}}
   </div>
 
  <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+ <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
  <script>
    var firebaseRef = new Firebase("https://gdgnewsletter.firebaseio.com/");
    var usersRef = firebaseRef.child("gdgnewsletter");
 
-   function criarJson() {
+   function subscribe() {
      var name = document.getElementById("name").value;
      var email = document.getElementById("email").value;
 
      if (name && email) {
        if (valid(email)) {
-        usersRef.push({ name: name, email: email });
+         var retorno = usersRef.push({ name: name, email: email });
+
+         document.getElementById("name").value = '';
+         document.getElementById("email").value = '';
+         document.getElementById("retorno").innerHTML = 'Cadastrado com Sucesso!';
+         setTimeout(function() {
+           document.getElementById("retorno").innerHTML = '';
+         }, 2000);
        }
      }
    }
-   
+
    function valid(email) {
      var validSubscription = true;
 
@@ -51,13 +51,38 @@
      return validSubscription;
    }
 
-   function subscribe(event) {
-     criarJson();
-     event.preventDefault();
-   }
+   var lastRandom = -1;
+   function sorteio() {
 
-   var submit = document.getElementById("subscribe");
-   submit.addEventListener('click', subscribe);
+     usersRef.on("value", function(snapshot) {
+       mostrarJson(snapshot.val());
+     });
+
+     function mostrarJson(json) {
+       var json   = JSON.parse(JSON.stringify(json));
+       var length = Object.keys(json).length;
+       var random = Math.floor(Math.random() * length) + 1; // zero ate o maximo
+
+       if (Number(random) == Number(lastRandom)) {
+         random = random + 1;
+       }
+
+       document.getElementById("sorteio-nro").innerHTML = 'Nro: ' + random;
+
+       var ct = 1;
+       $.each(json, function (i, e) {
+
+         if (Number(ct) == Number(random)) {
+           document.getElementById("sorteio-name").innerHTML = 'Nome: ' + e.name;
+           document.getElementById("sorteio-email").innerHTML = 'Email: ' + e.email;
+         }
+
+         ct++;
+       });
+
+       lastRandom = random;
+     }
+   }
  </script>
 </body>
 </html>

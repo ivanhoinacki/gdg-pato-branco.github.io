@@ -25,8 +25,30 @@
      var email = document.getElementById("email").value;
 
      if (name && email) {
-       usersRef.push({ name: name, email: email });
+       if (valid(email)) {
+        usersRef.push({ name: name, email: email });
+       }
      }
+   }
+   
+   function valid(email) {
+     var validSubscription = true;
+
+     usersRef.on("value", function(snapshot) {
+       snapshot.forEach(function(childSnapshot) {
+        // key will be "fred" the first time and "wilma" the second time
+        var key = childSnapshot.key();
+        // childData will be the actual contents of the child
+        var childData = childSnapshot.val();
+
+        if (email == childData.email) {
+          validSubscription = false;
+          return;
+        }
+      });
+    });
+
+     return validSubscription;
    }
 
    function subscribe(event) {

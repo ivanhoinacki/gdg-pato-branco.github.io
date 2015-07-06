@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introdução ao Material Design Lite
-avatar: leandroh
+avatar: leandro
 ---
 
 [Material Design Lite](http://getmdl.io) é uma biblioteca de componentes e modelos em CSS, HTML e JS puros (vanilla). Com o MDL você facilmente adiciona uma sensação visual e a essência do [Material Design](https://www.google.com/design/spec/material-design/introduction.html) no seu website.

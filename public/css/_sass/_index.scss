@@ -1,0 +1,85 @@
+.index {
+
+  .content {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  &-img-course {
+    margin:auto;
+    width:400px;
+    display:block;
+  }
+
+  .main {
+    margin:auto;
+    display: block;
+    text-align: center;
+    /* padding: 10px; */
+  }
+  .main aside {
+    margin-top: 15px;
+    padding: 10px;
+  }
+  .header-container, .footer-container, .main aside {
+    background-color: #E40912;
+    color: #FFF;
+  }
+  .footer-container, .main aside {
+    border-top: 1px solid #BB1218;
+    border-bottom: 1px solid #BB1218;
+  }
+
+  section {
+    footer {
+      text-align: center;
+    }
+  }
+
+  #mc_embed_signup .clear {
+    clear: none;
+    display: inline;
+  }
+  #mc_embed_signup input.email {
+    display: block;
+    padding: 8px 0;
+    margin: 0 4% 10px 0;
+    text-indent: 5px;
+    width: 100%;
+    min-width: 130px;
+  }
+  #mc_embed_signup input {
+    color: #222;
+    border: 1px solid #999;
+    font-size: 14px;
+  }
+  #mc_embed_signup input.button {
+    display: block;
+    width: 35%;
+    margin: 0 0 10px 0;
+    min-width: 90px;
+  }
+  #mc_embed_signup .button {
+    clear: both;
+    background-color: #BC0; /*#aaa;*/
+    border: 0 none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 5px 10px 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: auto;
+  }
+  p.hint-text {
+    font-size: 12px;
+  }
+}

@@ -1,47 +1,76 @@
 ---
 layout: default
-title: Blog
+title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<style>
+body {
+  background-color: #F9E5A6;
+}
+</style>
 
-    {{ post.content | strip_html | truncatewords: 50 }}
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
 
-    {% for avatar in site.avatar %}
-      {% if post.avatar == avatar.id  %}
-        <footer class="post-meta" >
-          <img alt="Author image" src="{{ avatar.url }}" class="author-thumb" >
-          <a href="#" >{{ avatar.name }}</a>
-          <span class="post-date post-date2">{{ post.date | date_to_string }}</span>
+<div class="main-container index">
+  <div class="main wrapper clearfix">
+
+    <div class="content container">
+      <article>
+        <header>
+          <img class="index-img-course" src="{{ site.baseurl }}public/img/course.jpg">
+          <h1>Desbrave o mundo web e mobile com AngularJS e Ionic</h1>
+          <p>Utilizaremos as ferramentas e bibliotecas mais adequadas às necessidades do desenvolvimento, sempre que possível, trabalhando com versões mais recentes. Nossa aplicação será dividida em três partes distintas: client-side, server-side e mobile.</p>
+        </header>
+        <section>
+          <p>Quer saber como tudo isso funciona? Inscreva-se e mantenha-se atualizado. Participe, colabore! O conhecimento é para todos.</p>
+        </section>
+      </article>
+    </div>
+
+    <aside>
+      <div class="content container">
+        <h2>Desbrave o mundo web e mobile</h2>
+        <p>Junte-se a nós para aprender a como desenvolver uma aplicação com AngularJS, utilizando recursos que irão tornar o desenvolvimento web simples, flexível, prazeroso e poderoso.</p>
+        <h3 style="text-align: left;" >Venha participar <span class="hint">*</span></h3>
+
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="//gdgpatobranco.us11.list-manage.com/subscribe/post?u=1e6e192d21a2b87ac81e3aea7&amp;id=9f6e1150f8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Endereço de email" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_1e6e192d21a2b87ac81e3aea7_9f6e1150f8" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Inscrever-se" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+          </form>
+        </div>
+        <!--End mc_embed_signup-->
+
+        <div style="font-size: 14px; text-align: left;">
+          <p>Garantimos:</p>
+          <ul>
+            <li>Inteiramente gratuito, presencial;</li>
+            <li>No spam. Nós respeitamos a sua privacidade e-mail;</li>
+          </ul>
+          <p>
+            P.S. Para saber mais em detalhe, entraremos em contato via email
+          </p>
+        </div>
+
+        <p class="hint-text" style="text-align: left;" ><span class="asterisk">*</span> Data e local a definir.</p>
+      </div>
+    </aside>
+
+    <article>
+      <section>
+        <footer>
+          <h3>Organização</h3>
+          <p>GDG Pato Branco</p>
         </footer>
-      {% endif %}
-    {% endfor %}
+      </section>
+    </article>
 
-    <p><a href="{{ post.url }}">Continue lendo &rarr;</a></p>
-  </div>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Anterior</a>
-  {% else %}
-    <span class="pagination-item older">Anterior</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Próximo</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Próximo</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Próximo</span>
-  {% endif %}
-</div>
+  </div> <!-- #main -->
+</div> <!-- #main-container -->

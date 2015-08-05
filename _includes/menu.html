@@ -1,0 +1,16 @@
+<nav id="my-menu">
+  <div>
+    <p>{{ site.title }}</p>
+    <ul class="pages">
+      <li><a href="{{ site.baseurl }}"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="{{ site.baseurl }}blog/"><i class="fa fa-coffee"></i> Blog</a></li>
+      <li><a href="{{ site.baseurl }}about/"><i class="fa fa-info-circle"></i> Sobre</a></li>
+    </ul>
+    <p class="links">
+      {% for social in site.social %}
+        <a target="_blank" href="{{ social.link }}" alt="{{ social.alt }}" ><i class="fa {{ social.icon }} fa-2x social-{{ forloop.index }}"></i></a>
+      {% endfor %}
+    </p>
+  </div>
+</nav>
+<div class="menu-button" href="#menu"><i class="fa fa-bars"></i></div>

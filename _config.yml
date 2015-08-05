@@ -34,9 +34,14 @@ avatar  :
     url :         https://s.gravatar.com/avatar/ddb2be29af32b024b023316db3b6ede5?s=80
 
 paginate:         5
+paginate_path:    blog/page:num
 
 # Custom vars
 version:          2.1.0
 
 github:
   repo:           https://github.com/gdg-pato-branco
+
+sass:
+    sass_dir: public/css/_sass
+    style: compressed

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Inscrições Codelab AngularJS #1
+title: Inscrições AngularJS Codelab #1
 avatar: vitor
 ---
 

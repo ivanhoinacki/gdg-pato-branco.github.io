@@ -10,7 +10,7 @@ Não perca essa oportunidade incrível de aprender umas das tecnologias Google m
 
 Temos apenas 40 vagas, vai perder?
 
-![Full Throttle]({{ site.url }}/public/img/full.gif "Full Throttle é um jogo de aventura e ação desenvolvido pela LucasArts e lançado em 30 de abril de 1995.")
+![Full Throttle]({{ site.url }}/assets/full.gif "Full Throttle é um jogo de aventura e ação desenvolvido pela LucasArts e lançado em 30 de abril de 1995.")
 
 Maiores informações, [acesse aqui](https://github.com/gdg-pato-branco/angularjs-codelab-01).
 

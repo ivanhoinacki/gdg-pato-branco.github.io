@@ -1,0 +1,282 @@
+body, html {
+  color: #212121;
+  font: 400 16px/24px Roboto,sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  letter-spacing: 0.04em
+}
+
+.wrapper {
+  margin-top: 0;
+  overflow: hidden;
+  width: 100%
+}
+
+.wrapper-footer {
+  background: #424242
+}
+
+.wrapper-footer-content {
+  color: #fff;
+  overflow: auto;
+  padding: 10px 24px;
+}
+
+.gdgpb-top {
+  background-color: #455a64;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  top: 0;
+  width: 100%;
+  z-index: 10005;
+}
+
+.content {
+  margin: 40px auto;
+  max-width: 1400px;
+  padding: 0 24px;
+  position: relative;
+}
+
+.gdgpb-top-logo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10006;
+}
+
+.row {
+  height: 56px;
+  padding: 10px 24px;
+}
+
+.gdgpb-full-width {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.devsite-logo {
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  opacity: .7;
+  transition: opacity .2s;
+  vertical-align: top
+}
+
+.devsite-logo:hover,
+.devsite-logo:focus {
+  opacity:1
+}
+
+:link, :visited {
+  color: #03a9f4;
+  outline: 0;
+  text-decoration: none;
+}
+
+.gdgpb-text-logo {
+  color: #fff;
+  font: 400 24px/32px Roboto,sans-serif;
+  letter-spacing: -.01em;
+  height: 36px;
+  line-height: 36px;
+}
+
+.gdgpb-menu-text {
+  font: 400 16px/24px Roboto,sans-serif;
+  line-height: 36px;
+}
+
+.devsite-search-wrapper {
+  display: inline-block;
+  margin-left: 40px;
+  max-width: 872px;
+  position: relative;
+  transition: background .2s;
+  vertical-align: top;
+  width: calc(100% - 496px);
+}
+
+#gc-appnav {
+  border-bottom: 1px solid #ebebeb;
+  padding: 0;
+  margin-top: 75px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  padding: 0 16px;
+  display: inline;
+}
+
+.about ul li {
+  display: block;
+}
+
+#content-wrapper {
+  margin: 0 auto;
+  width: 100%;
+  padding: 66px 0;
+  max-width: 960px;
+}
+
+hr {
+  /*background: #ebebeb;*/
+  background: #ddd;
+  border: 0;
+  height: 1px;
+  margin: 16px 0;
+}
+
+.post-meta {
+  color: #9eabb3;
+  display: flex;
+  font-family: "Open Sans",sans-serif;
+  line-height: 1.2rem;
+  margin: 1.75rem 0 0;
+}
+
+.post-meta a {
+  line-height: 2px;
+  margin: 11px 8px 0;
+}
+
+.author-thumb {
+  border-radius: 100%;
+  height: 24px;
+  margin-right: 9px;
+  width: 24px;
+}
+
+.post-meta img {
+  display: block;
+  max-width: 100%;
+  margin: 0 0 1rem;
+  border-radius: 4px;
+}
+
+.post-meta a {
+  color: #9eabb3;
+  text-decoration: none;
+  font-size: 12px;
+
+  opacity: .7;
+  transition: opacity .2s;
+}
+
+.post-meta a:hover {
+  opacity: 1;
+}
+
+.continue-reading, .post-date, .post-author {
+  font-size: 12px;
+  margin-left: 6px;
+  margin-top: 4px;
+  padding-left: 12px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.continue-reading:hover {
+  text-decoration: underline;
+}
+
+.post h1 {
+  margin-bottom: 20px;
+}
+
+.post-date {
+  border-left: 1px solid #d5dbde;
+  padding-left: 12px;
+}
+
+.post-author {
+  border-left: 0;
+  text-transform: none;
+  margin-right: 6px
+}
+
+a {
+  opacity: .8;
+  transition: opacity .2s;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 2.5;
+  height: 5.2em;
+  width: 4.5em;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  color: #ddd;
+  text-transform: uppercase;
+}
+
+#menu-content {
+  display: none;
+  padding-top: 50px;
+  background: #edf2f5
+}
+
+#menu-content ul li,
+#menu-content ul li a {
+  display: block;
+}
+
+#menu-content ul li {
+  border-bottom: 1px solid #e2e2e2
+}
+
+#menu-content ul li:hover {
+  background: #e2e2e2
+}
+
+#menu-content ul li a {
+  color: #455a64
+}
+
+@media screen
+and (max-width: 700px) {
+  ul {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}

@@ -7,7 +7,7 @@ avatar: leandro
 Sempre que você precisa configurar um servidor Web em seu computador bate aquele desânimo. Tudo isso torna criar um ambiente de desenvolvimento uma verdadeira dor de cabeça. As configurações variam de acordo com o sistema operacional. Provavelmente você vai acabar esbarrando em uma e outra configuração sinistra.
 
 
-![Gatinho ^^](http://giphy.com/embed/XwnOjVqPIlXGM)
+![Gatinho ^^](https://media.giphy.com/media/XwnOjVqPIlXGM/giphy.gif)
 
 
 Muitos desenvolvedores não conhecem ou nunca ouviram falar de soluções mais simples, tais como opções no Python ou Node.js.

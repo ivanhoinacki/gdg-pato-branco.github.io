@@ -214,7 +214,7 @@ ol.unstyled {
 	color: #fff;
 	background-color: #e94d20;
   position: absolute;
-  bottom: 61px;
+  bottom: 0;
   left: 0;
 }
 
@@ -304,7 +304,7 @@ header .time-date {
 }
 
 section {
-  background: url(/img/bg-shadow.png) no-repeat top center;
+  background: url(../img/bg-shadow.png) no-repeat top center;
 }
 
 section .container {
@@ -332,14 +332,14 @@ footer a {
 }
 
 #logo-google-footer {
-	background: url(/img/gdg-logo.png) 0px -10px no-repeat;
+	background: url(../img/gdg-logo.png) 0px -10px no-repeat;
 	width: 108px;
 	height: 48px;
 	margin: 0 auto;
 }
 
 #logo-materdei {
-	background: url(/img/materdei.jpg) 0px -10px no-repeat;
+	background: url(../img/materdei.jpg) 0px -10px no-repeat;
 	width: 108px;
 	height: 48px;
 	margin: 0 auto;
@@ -403,7 +403,7 @@ footer a {
 #plus-logo {
   margin: 17px 0;
   display: inline-block;
-  background: url(/img/gdg-logo.png) 0px -10px no-repeat;
+  background: url(../img/gdg-logo.png) 0px -10px no-repeat;
   background-size: cover;
   width: 108px;
   height: 48px;
@@ -416,7 +416,7 @@ footer a {
 }
 
 #plus-logo {
-  background: url(/img/plus.png) 0px 0px no-repeat;
+  background: url(../img/plus.png) 0px 0px no-repeat;
   width: 68px;
   height: 48px;
   background-position: 20px;
@@ -472,7 +472,7 @@ footer a {
 /* ======================================== Events ========== */
 
 #event-highlights {
-  background: url(/img/bg-shadow.png) no-repeat top center;
+  background: url(../img/bg-shadow.png) no-repeat top center;
 }
 #event-highlights .box {
   margin-bottom: 35px;
@@ -486,7 +486,7 @@ footer a {
 /* ======================================== Schedule ========== */
 
 #schedule {
-	background: url(/img/bg-shadow.png) no-repeat top center,
+	background: url(../img/bg-shadow.png) no-repeat top center,
     url(../images/bg-shadow-btm.png) no-repeat bottom center;
   background-color: #f7f7f7;
 }
@@ -625,7 +625,7 @@ footer a {
 					transition: all 0.3s ease-in-out;*/
 }
 .toggle {
-	background: url(/img/bg-fade.png) no-repeat top center;
+	background: url(../img/bg-fade.png) no-repeat top center;
 	padding-top: 48px;
 	margin-top: -48px;
 	position: relative;
@@ -634,7 +634,7 @@ footer a {
 }
 
 .slide-up.large + .toggle {
-	background: url(/img/bg-fade-lg.png) no-repeat top center;
+	background: url(../img/bg-fade-lg.png) no-repeat top center;
 /*	padding-top: 48px;
 	margin-top: -48px;
 	position: relative;
@@ -645,7 +645,7 @@ footer a {
 .toggle span {
 	border: 1px solid #d4d4d4;
 	border-top: none;
-	background: url(/img/icn-arrow-slide.gif) no-repeat 10px -10px;
+	background: url(../img/icn-arrow-slide.gif) no-repeat 10px -10px;
 	display: block;
 	margin: 0 auto;
 	width: 27px;
@@ -674,11 +674,11 @@ footer a {
 
 @media (min-width: 1200px) {
   #event-highlights {
-    background: url(/img/bg-shadow.png) no-repeat top center;
+    background: url(../img/bg-shadow.png) no-repeat top center;
   }
   #schedule {
     background:
-       url(/img/bg-shadow.png) no-repeat top center,
+       url(../img/bg-shadow.png) no-repeat top center,
        url(../images/bg-shadow-btm.png) no-repeat bottom center;
     background-color: #f7f7f7;
   }

@@ -752,6 +752,7 @@ footer a {
 
   #about h2 {
     text-align: center;
+    margin-top: 30px
   }
 
   section .container {
@@ -1135,9 +1136,18 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
 
+  #plus-logo {
+    margin: -4px -20px
+	}
+
+  #udacity-logo {
+    margin: -5px
+  }
+
 	#nav-logo {
-	  background-image: url(../images/retina/logo-2x.png);
-		background-size: 100%;
+	  background-image: url(../img/gdg-logo.png);
+		background-size: 100px 60px;
+    width: 100px;
 	}
 	#about .icon-1 {
 	  background-image: url(../images/retina/businessplanning_2x.png);

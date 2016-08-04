@@ -2,90 +2,10 @@
 <html lang="en">
   {% include head.html %}
 <body>
-  <div style="text-align:center;z-index:99999;display:block;background:#2962FF;color:#fff;padding:20px"><span>Deseja receber atualizações do GDG Pato Branco? </span> <a target="_blank" href="http://eepurl.com/buDgbf" style="color:white;text-decoration:underline">Assine nossa newsletter</a></div>
-
   {% include sidebar.html %}
   <div class="content container">
     {{content}}
   </div>
-
- <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
- <script>
-   var firebaseRef = new Firebase("https://gdgnewsletter.firebaseio.com/");
-   var usersRef = firebaseRef.child("gdgnewsletter");
-
-   function subscribe() {
-     var name = document.getElementById("name").value;
-     var email = document.getElementById("email").value;
-
-     if (name && email) {
-       if (valid(email)) {
-         var retorno = usersRef.push({ name: name, email: email });
-
-         document.getElementById("name").value = '';
-         document.getElementById("email").value = '';
-         document.getElementById("retorno").innerHTML = 'Cadastrado com Sucesso!';
-         setTimeout(function() {
-           document.getElementById("retorno").innerHTML = '';
-         }, 2000);
-       }
-     }
-   }
-
-   function valid(email) {
-     var validSubscription = true;
-
-     usersRef.on("value", function(snapshot) {
-       snapshot.forEach(function(childSnapshot) {
-        // key will be "fred" the first time and "wilma" the second time
-        var key = childSnapshot.key();
-        // childData will be the actual contents of the child
-        var childData = childSnapshot.val();
-
-        if (email == childData.email) {
-          validSubscription = false;
-          return;
-        }
-      });
-    });
-
-     return validSubscription;
-   }
-
-   var lastRandom = -1;
-   function sorteio() {
-
-     usersRef.on("value", function(snapshot) {
-       mostrarJson(snapshot.val());
-     });
-
-     function mostrarJson(json) {
-       var json   = JSON.parse(JSON.stringify(json));
-       var length = Object.keys(json).length;
-       var random = Math.floor(Math.random() * length) + 1; // zero ate o maximo
-
-       if (Number(random) == Number(lastRandom)) {
-         random = random + 1;
-       }
-
-       document.getElementById("sorteio-nro").innerHTML = 'Nro: ' + random;
-
-       var ct = 1;
-       $.each(json, function (i, e) {
-
-         if (Number(ct) == Number(random)) {
-           document.getElementById("sorteio-name").innerHTML = 'Nome: ' + e.name;
-           document.getElementById("sorteio-email").innerHTML = 'Email: ' + e.email;
-         }
-
-         ct++;
-       });
-
-       lastRandom = random;
-     }
-   }
- </script>
 
   <!-- Start of Leadin Embed -->
   <script type="text/javascript" src="//js.leadin.com/js/v1/2463875.js" id="LeadinEmbed-2463875" crossorigin="use-credentials" async defer></script>

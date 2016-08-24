@@ -34,11 +34,11 @@ p {
 }
 
 .wrapper-footer {
-  background: #424242
+  background: #eceff1
 }
 
 .wrapper-footer-content {
-  color: #fff;
+  color: #757575;
   overflow: auto;
   padding: 10px 24px;
 }
@@ -52,10 +52,10 @@ p {
 }
 
 .content {
-  margin: 40px auto;
-  max-width: 1400px;
-  padding: 0 24px;
   position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 1400px;
 }
 
 .gdgpb-top-logo {
@@ -77,11 +77,16 @@ p {
 
 .devsite-logo {
   display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  opacity: .7;
+
+  opacity: .8;
   transition: opacity .2s;
-  vertical-align: top
+  vertical-align: top;
+  text-indent: -9999px;
+  background-image: url(/img/gdg-icon.png);
+
+  background-repeat:no-repeat;
+  background-position:center;
+  cursor:pointer;
 }
 
 .devsite-logo:hover,
@@ -99,7 +104,6 @@ p {
   color: #fff;
   font: 400 24px/32px Roboto,sans-serif;
   letter-spacing: -.01em;
-  height: 36px;
   line-height: 36px;
 }
 
@@ -116,6 +120,19 @@ p {
   transition: background .2s;
   vertical-align: top;
   width: calc(100% - 496px);
+}
+
+.rainbow {
+  position: relative;
+  background-image: -webkit-linear-gradient(left, rgb(66, 133, 244) 0%, rgb(66, 133, 244) 6.25%, rgb(66, 133, 244) 6.25%, rgb(66, 133, 244) 12.5%, rgb(27, 177, 91) 12.5%, rgb(27, 177, 91) 18.75%, rgb(27, 177, 91) 18.75%, rgb(27, 177, 91) 25%, rgb(237, 185, 8) 25%, rgb(237, 185, 8) 31.25%, rgb(237, 185, 8) 31.25%, rgb(237, 185, 8) 37.5%, rgb(207, 52, 85) 37.5%, rgb(207, 52, 85) 50% );
+  background-origin: padding-box;
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  background-size: 200% 7px;
+  box-sizing: border-box;
+  display: block;
+  height: 7px;
+  width: 100%;
 }
 
 #gc-appnav {
